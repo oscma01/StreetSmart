@@ -644,7 +644,9 @@ require(REQUIRE_CONFIG, [], function () {
             onOpen: function onOpen() {
 				var panel = this.getPanel();
 				panel.position.width = 1200; 
-				panel.position.height = 600; 
+				panel.position.height = 600;
+				panel.setPosition(panel.position);        
+				panel.panelManager.normalizePanel(panel);  
                 var zoomLevel = this.map.getScale(); // Only open when the current zoom scale is close enough to the ground.
                 if (zoomLevel < this._zoomThreshold) {
                     this._initApi()
