@@ -643,7 +643,7 @@ require(REQUIRE_CONFIG, [], function () {
             },
             onOpen: function onOpen() {
 				var panel = this.getPanel();
-				panel.position.width = 50%; 
+				panel.position.width = window.innerWidth/2; 
 				//panel.position.height = 900;
 				panel.setPosition(panel.position);        
 				panel.panelManager.normalizePanel(panel);  
