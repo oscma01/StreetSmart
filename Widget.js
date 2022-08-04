@@ -582,7 +582,7 @@ require(REQUIRE_CONFIG, [], function () {
                     dateRange = this._getDateRange(this._timeTravel)
                 } // Manually fire these events as they are fired too early by the API,
                 // we can't listen to them yet.
-                this.query(localCenter.x + ',' + localCenter.y, coord, dateRange)
+                this.query(localCenter.x + ',' + localCenter.y + 50, coord, dateRange)
             },
             query: function query(_query, coord, range) {
                 var _this7 = this;
