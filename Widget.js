@@ -576,13 +576,13 @@ require(REQUIRE_CONFIG, [], function () {
                 var mapCenter = center || this.map.extent.getCenter();
                 var mapSRS = this.config.srs.split(':')[1];
                 var localCenter = utils.transformProj4js(mapCenter, mapSRS); //GC: Create coordinate and date range variables used to keep the panorama in the current time setting instead of resetting it to the default
-                var coord = [localCenter.x, localCenter.y];
+                var coord = [localCenter.x, localCenter.y+5000];
                 var dateRange = null;
                 if (this._timeTravel) {
                     dateRange = this._getDateRange(this._timeTravel)
                 } // Manually fire these events as they are fired too early by the API,
                 // we can't listen to them yet.
-                this.query(localCenter.x + ',' + localCenter.y + 50, coord, dateRange)
+                this.query(localCenter.x + ',' + localCenter.y, coord, dateRange)
             },
             query: function query(_query, coord, range) {
                 var _this7 = this;
